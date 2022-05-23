@@ -10,10 +10,15 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>index</title>
+    <style>
+        p{
+            border-bottom: 2px;
+        }
+    </style>
 </head>
 <body>
     <p>
-        @Html.ActionLink("Create New", "Create")
+        @Html.ActionLink("Criar categoria", "Create")
     </p>
     <table class="table">
         <tr>
@@ -29,9 +34,9 @@
                 @Html.DisplayFor(modelItem => item.Nome)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id=item.CategoriaId }) |
-                @Html.ActionLink("Details", "Details", new { id=item.CategoriaId }) |
-                @Html.ActionLink("Delete", "Delete", new { id=item.CategoriaId })
+                @Html.ActionLink("Editar", "Edit", new { id=item.CategoriaId }) |
+                @Html.ActionLink("Detalhar", "Details", new { id=item.CategoriaId }) |
+                @Html.ActionLink("Apagar", "Delete", new { id=item.CategoriaId })
             </td>
         </tr>
     }
