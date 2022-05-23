@@ -10,6 +10,11 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Edit</title>
+    <style>
+        .botao, .btn btn-default {
+            display: inline-block;
+        }
+    </style>
 </head>
 <body>
     <script src="~/Scripts/jquery-1.10.2.min.js"></script>
@@ -43,8 +48,9 @@
         </div>
     }
     
-    <div>
-        @Html.ActionLink("Voltar", "Index")
-    </div>
+        <div>
+            <button  class="botao" type="button"> @Html.ActionLink("Voltar", "Index")</button>
+           
+        </div>
 </body>
 </html>

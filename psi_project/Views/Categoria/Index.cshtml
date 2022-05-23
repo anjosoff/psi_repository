@@ -11,15 +11,23 @@
     <meta name="viewport" content="width=device-width" />
     <title>index</title>
     <style>
-        p{
-            border-bottom: 2px;
+        .botao {
+            background-color: #e7e7e7;
+            color: black;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 3px;
+        }
+        .botao:hover {
+            background-color: white; 
+            
         }
     </style>
 </head>
 <body>
-    <p>
-        @Html.ActionLink("Criar categoria", "Create")
-    </p>
+    
+    <button class="botao" type="button"> @Html.ActionLink("Criar categoria", "Create")</button>
+       
     <table class="table">
         <tr>
             <th>
@@ -34,9 +42,13 @@
                 @Html.DisplayFor(modelItem => item.Nome)
             </td>
             <td>
-                @Html.ActionLink("Editar", "Edit", new { id=item.CategoriaId }) |
-                @Html.ActionLink("Detalhar", "Details", new { id=item.CategoriaId }) |
-                @Html.ActionLink("Apagar", "Delete", new { id=item.CategoriaId })
+                
+                <button class="botao" type="button">@Html.ActionLink("Editar", "Edit", new { id = item.CategoriaId })</button>
+                <button class="botao" type="button">@Html.ActionLink("Detalhar", "Details", new { id = item.CategoriaId })</button>
+                <button class="botao" type="button">@Html.ActionLink("Apagar", "Delete", new { id = item.CategoriaId })</button>
+
+              
+                
             </td>
         </tr>
     }

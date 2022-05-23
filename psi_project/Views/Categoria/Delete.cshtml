@@ -26,7 +26,9 @@
             .bota1:hover {
                 transform: scale(1.05);
             }
-
+        .botao {
+            display: inline-block;
+        }
     </style>
 </head>
 <body>
@@ -50,7 +52,7 @@
             @Html.HiddenFor(model=> model.CategoriaId)
             <div class="form-actions">
                 <input class="bota1"type="submit" value="Apagar" class="btn btn-default" /> |
-                @Html.ActionLink("Voltar", "Index")
+                <button class="botao" type="button"> @Html.ActionLink("Back to List", "Index")@Html.ActionLink("Voltar", "Index")</button>         
             </div>
         }
     </div>

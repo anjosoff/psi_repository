@@ -10,6 +10,11 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Details</title>
+    <style>
+        .botao {
+            display: inline-block;
+        }
+    </style>
 </head>
 <body>
     <div>
@@ -27,8 +32,10 @@
         </dl>
     </div>
     <p>
-        @Html.ActionLink("Edit", "Edit", new { id = Model.CategoriaId }) |
-        @Html.ActionLink("Back to List", "Index")
+
+        <button class="botao" type="button">@Html.ActionLink("Editar", "Edit", new { id = Model.CategoriaId })</button>
+        <button  class="botao" type="button">@Html.ActionLink("Menu principal", "Index")</button>
+        
     </p>
 </body>
 </html>
