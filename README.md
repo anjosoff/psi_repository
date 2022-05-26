@@ -1,6 +1,7 @@
-# Repositório de **Programação de Sistema para Internet - PSI**
+# 📁 Repositório de **Programação de Sistema para Internet - PSI**
 > Professor George Azevendo - 2022
 
+                         CRONOGRAMA                              
 | Capitulo                       |         Descrição                 |
 |--------------------------------|-----------------------------------|
 |01- Primeira aplicação          |    Criação de CRUD simples        |
