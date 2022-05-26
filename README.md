@@ -1,5 +1,6 @@
-# 📁 Repositório de **Programação de Sistema para Internet - PSI**
+# 📁 Repositório de **Programação de Sistema para Internet**
 > Professor George Azevendo - 2022
+
 
                          CRONOGRAMA                              
 | Capitulo                       |         Descrição                 |
