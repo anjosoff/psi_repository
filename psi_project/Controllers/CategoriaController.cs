@@ -15,7 +15,8 @@ namespace psi_project.Controllers
             new Categoria() { CategoriaId = 2, Nome = "Monitores"},
             new Categoria() { CategoriaId = 3, Nome = "Impressoras"},
             new Categoria() { CategoriaId = 4, Nome = "Mouses"},
-            new Categoria() { CategoriaId = 5, Nome = "Desktops"}
+            new Categoria() { CategoriaId = 5, Nome = "Desktops"},
+            new Categoria() { CategoriaId = 6, Nome = "Consoles"},
         };
         public ActionResult Index()=>View(categorias);
   
