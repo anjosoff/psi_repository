@@ -14,4 +14,3 @@ namespace psi_project.Models
         public DbSet<Fabricante> Fabricantes { get; set; }
     }
 }
-}
