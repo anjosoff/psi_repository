@@ -127,6 +127,8 @@
     <Content Include="Views\Categoria\Index.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Fabricante\Index.cshtml" />
+    <Content Include="Views\Fabricante\Create.cshtml" />
+    <Content Include="Views\Fabricante\Edit.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
