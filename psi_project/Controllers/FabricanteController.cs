@@ -21,14 +21,14 @@ namespace psi_project.Controllers
         };
         private EFContext context = new EFContext();
 
-        public ActionResult Index() => View(fabricantes);
+        //public ActionResult Index() => View(fabricantes);
 
         public ActionResult Create() => View();
         // GET: Fabricante
-        /*public ActionResult Index()
+        public ActionResult Index()
         {
             return View(context.Fabricantes.OrderBy(c=>c.Nome));
-        }/*
+        }
 
 
         // GET: Create
