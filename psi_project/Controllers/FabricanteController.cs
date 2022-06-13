@@ -80,5 +80,52 @@ namespace psi_project.Controllers
             }
             return View(fabricante);
         }
+        // GET: Fabricantes/Details/5
+        public ActionResult Details(long? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            //Fabricante fabricante = context.Fabricantes.Find(id);
+            Fabricante fabricante = fabricantes.Where(m => m.FabricanteId == id).First();
+            if (fabricante == null)
+            {
+                return HttpNotFound();
+            }
+            return View(fabricante);
+        }
+
+
+        // GET: Fabricantes/Delete/5
+        [HttpGet]
+        public ActionResult Delete(long? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            //Fabricante fabricante = context.Fabricantes.Find(id);
+            Fabricante fabricante = fabricantes.Where(m => m.FabricanteId == id).First();
+            if (fabricante == null)
+            {
+                return HttpNotFound();
+            }
+            return View(fabricante);
+        }
+
+        // POST: Fabricantes/Delete/5
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Delete(long id)
+        {
+            Fabricante fabricante = fabricantes.Where(c => c.FabricanteId == id).First();
+            fabricantes.Remove(fabricante);
+            //Fabricante fabricante = context.Fabricantes.Find(id);
+            //context.Fabricantes.Remove(fabricante);
+            //context.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
     }
 }
