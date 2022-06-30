@@ -1,4 +1,5 @@
-﻿using psi_project.Models;
+﻿
+using psi_project.Models;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -9,33 +10,33 @@ using System.Web.Mvc;
 
 namespace psi_project.Controllers
 {
-    public class FabricanteController : Controller
+    public class FabricantesController : Controller
     {
-        private static IList<Fabricante> fabricantes = new List<Fabricante>(){
-            new Fabricante() { FabricanteId = 1, Nome = "fabricantes Carros"},
-            new Fabricante() { FabricanteId = 2, Nome = "fabricantes Motos"},
-            new Fabricante() { FabricanteId = 3, Nome = "fabricantes Impressoras"},
-            new Fabricante() { FabricanteId = 4, Nome = "fabricantes Eletro"},
-            new Fabricante() { FabricanteId = 5, Nome = "fabricantes Avião"},
-            new Fabricante() { FabricanteId = 6, Nome = "fabricantes Notebooks"},
+        public EFContext context = new EFContext();
+
+        /*
+        private static IList<Fabricante> fabricantes = new List<Fabricante>()
+        {
+            new Fabricante() { FabricanteId = 1, Nome = "LG"},
+            new Fabricante() { FabricanteId = 2, Nome = "Microsoft"},
         };
-        private EFContext context = new EFContext();
+        */
 
-        //public ActionResult Index() => View(fabricantes);
-
-        public ActionResult Create() => View();
-        // GET: Fabricante
+        // GET: Fabricantes
         public ActionResult Index()
         {
-            return View(context.Fabricantes.OrderBy(c=>c.Nome));
+            return View(
+                //fabricantes
+                context.Fabricantes.OrderBy(c => c.Nome)
+                );
         }
 
-
         // GET: Create
-        /*public ActionResult Create()
+        public ActionResult Create()
         {
             return View();
-        }*/
+        }
+
         // POST: Create
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -43,20 +44,20 @@ namespace psi_project.Controllers
         {
             context.Fabricantes.Add(fabricante);
             context.SaveChanges();
+
+            //fabricantes.Add(fabricante);
             return RedirectToAction("Index");
         }
 
-            // GET: Fabricantes/Edit/5
-            [HttpGet]
-            public ActionResult Edit(long? id)
+        // GET: Fabricantes/Edit/5
+        public ActionResult Edit(long? id)
         {
             if (id == null)
             {
-
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Fabricante fabricante = fabricantes.Where(m => m.FabricanteId == id).First();
-            //Fabricante fabricante = context.Fabricantes.Find(id);
+            Fabricante fabricante = context.Fabricantes.Find(id);
+            //Fabricante fabricante = fabricantes.Where(m => m.FabricanteId == id).First();
             if (fabricante == null)
             {
                 return HttpNotFound();
@@ -71,15 +72,17 @@ namespace psi_project.Controllers
         {
             if (ModelState.IsValid)
             {
-                fabricantes.Remove(
-                 fabricantes.Where(c => c.FabricanteId == fabricante.FabricanteId).First());
-                fabricantes.Add(fabricante);
-                //context.Entry(fabricante).State = EntityState.Modified;
-                // context.SaveChanges();
+                /* fabricantes.Remove(
+                    fabricantes.Where(c => c.FabricanteId == fabricante.FabricanteId).First());
+                fabricantes.Add(fabricante); */
+
+                context.Entry(fabricante).State = EntityState.Modified;
+                context.SaveChanges();
                 return RedirectToAction("Index");
             }
             return View(fabricante);
         }
+
         // GET: Fabricantes/Details/5
         public ActionResult Details(long? id)
         {
@@ -87,8 +90,9 @@ namespace psi_project.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            //Fabricante fabricante = context.Fabricantes.Find(id);
-            Fabricante fabricante = fabricantes.Where(m => m.FabricanteId == id).First();
+            Fabricante fabricante = context.Fabricantes.Find(id);
+            //Fabricante fabricante = fabricantes.Where(m => m.FabricanteId == id).First();
+
             if (fabricante == null)
             {
                 return HttpNotFound();
@@ -96,17 +100,16 @@ namespace psi_project.Controllers
             return View(fabricante);
         }
 
-
         // GET: Fabricantes/Delete/5
-        [HttpGet]
         public ActionResult Delete(long? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            //Fabricante fabricante = context.Fabricantes.Find(id);
-            Fabricante fabricante = fabricantes.Where(m => m.FabricanteId == id).First();
+            Fabricante fabricante = context.Fabricantes.Find(id);
+
+            //Fabricante fabricante = fabricantes.Where(m => m.FabricanteId == id).First();
             if (fabricante == null)
             {
                 return HttpNotFound();
@@ -119,13 +122,13 @@ namespace psi_project.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Delete(long id)
         {
-            Fabricante fabricante = fabricantes.Where(c => c.FabricanteId == id).First();
-            fabricantes.Remove(fabricante);
-            //Fabricante fabricante = context.Fabricantes.Find(id);
-            //context.Fabricantes.Remove(fabricante);
-            //context.SaveChanges();
+            Fabricante fabricante = context.Fabricantes.Find(id);
+            context.Fabricantes.Remove(fabricante);
+            context.SaveChanges();
+
+            //Fabricante fabricante = fabricantes.Where(m => m.FabricanteId == id).First();
+            //fabricantes.Remove(fabricante);
             return RedirectToAction("Index");
         }
-
     }
 }

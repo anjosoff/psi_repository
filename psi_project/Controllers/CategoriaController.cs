@@ -7,19 +7,21 @@ using System.Web.Mvc;
 
 namespace psi_project.Controllers
 {
-    public class CategoriaController : Controller { 
-        // GET: Categoria
-        
-        private static IList<Categoria> categorias = new List<Categoria>(){
+    public class CategoriasController : Controller
+    {
+        private static IList<Categoria> categorias = new List<Categoria>()
+        {
             new Categoria() { CategoriaId = 1, Nome = "Notebooks"},
             new Categoria() { CategoriaId = 2, Nome = "Monitores"},
             new Categoria() { CategoriaId = 3, Nome = "Impressoras"},
             new Categoria() { CategoriaId = 4, Nome = "Mouses"},
-            new Categoria() { CategoriaId = 5, Nome = "Desktops"},
-            new Categoria() { CategoriaId = 6, Nome = "Consoles"},
+            new Categoria() { CategoriaId = 5, Nome = "Desktops"}
         };
-        public ActionResult Index()=>View(categorias);
-  
+
+        // GET: Categorias
+        public ActionResult Index() => View(categorias);
+
+        // GET: Categorias
         public ActionResult Create() => View();
 
         [HttpPost]
@@ -35,6 +37,7 @@ namespace psi_project.Controllers
         {
             return View(categorias.Where(m => m.CategoriaId == id).First());
         }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(Categoria categoria)
@@ -54,14 +57,15 @@ namespace psi_project.Controllers
         {
             return View(categorias.Where(m => m.CategoriaId == id).First());
         }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(Categoria categoria){
+        public ActionResult Delete(Categoria categoria)
+        {
             categorias.Remove(
             categorias.Where(c => c.CategoriaId == categoria.CategoriaId).First());
             return RedirectToAction("Index");
         }
-
     }
-    
+
 }

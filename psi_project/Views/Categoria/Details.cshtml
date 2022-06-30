@@ -1,7 +1,7 @@
 ﻿@model psi_project.Models.Categoria
 
 @{
-    Layout = null;
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <!DOCTYPE html>
@@ -10,11 +10,6 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Details</title>
-    <style>
-        .botao {
-            display: inline-block;
-        }
-    </style>
 </head>
 <body>
     <div>
@@ -24,18 +19,16 @@
             <dt>
                 @Html.DisplayNameFor(model => model.Nome)
             </dt>
-    
+
             <dd>
                 @Html.DisplayFor(model => model.Nome)
             </dd>
-    
+
         </dl>
     </div>
     <p>
-
-        <button class="botao" type="button">@Html.ActionLink("Editar", "Edit", new { id = Model.CategoriaId })</button>
-        <button  class="botao" type="button">@Html.ActionLink("Menu principal", "Index")</button>
-        
+        @Html.ActionLink("Editar", "Edit", new { id = Model.CategoriaId }) |
+        @Html.ActionLink("Retornar para Lista", "Index")
     </p>
 </body>
 </html>

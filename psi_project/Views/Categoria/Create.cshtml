@@ -1,7 +1,7 @@
 ﻿@model psi_project.Models.Categoria
 
 @{
-    Layout = null;
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <!DOCTYPE html>
@@ -9,23 +9,18 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Criar</title>
-    <style>
-        .botao{
-            display:inline-block;
-        }
-    </style>
+    <title>Create</title>
 </head>
 <body>
     <script src="~/Scripts/jquery-1.10.2.min.js"></script>
     <script src="~/Scripts/jquery.validate.min.js"></script>
     <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
-    
-    
-    @using (Html.BeginForm()) 
+
+
+    @using (Html.BeginForm())
     {
         @Html.AntiForgeryToken()
-        
+
         <div class="form-horizontal">
             <h4>Categoria</h4>
             <hr />
@@ -37,18 +32,17 @@
                     @Html.ValidationMessageFor(model => model.Nome, "", new { @class = "text-danger" })
                 </div>
             </div>
-    
+
             <div class="form-group">
                 <div class="col-md-offset-2 col-md-10">
-                    <input type="submit" value="Criar" class="btn btn-default" />
+                    <input type="submit" value="Create" class="btn btn-default" />
                 </div>
             </div>
         </div>
     }
-    
+
     <div>
-        <button class="botao" type="button"> @Html.ActionLink("Back to List", "Index")</button>
-       
+        @Html.ActionLink("Retornar para Lista", "Index")
     </div>
 </body>
 </html>

@@ -1,7 +1,7 @@
 ﻿@model psi_project.Models.Categoria
 
 @{
-    Layout = null;
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <!DOCTYPE html>
@@ -10,29 +10,9 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Delete</title>
-    <style>
-        .form-actions bota1 {
-            color: #FFF;
-            background-color: green;
-            border: none;
-            height: 60px;
-            line-height: 30px;
-            padding: 0 20px;
-            text-transform: uppercase;
-            font-weight: bold;
-            cursor: pointer;
-            border-radius: 30px;
-        }
-            .bota1:hover {
-                transform: scale(1.05);
-            }
-        .botao {
-            display: inline-block;
-        }
-    </style>
 </head>
 <body>
-    <h3>Are you sure you want to delete this?</h3>
+    <h3>Tem certeza que deseja excluir @Html.DisplayFor(model => model.Nome) das categorias?</h3>
     <div>
         <h4>Categoria</h4>
         <hr />
@@ -40,19 +20,20 @@
             <dt>
                 @Html.DisplayNameFor(model => model.Nome)
             </dt>
-    
+
             <dd>
                 @Html.DisplayFor(model => model.Nome)
             </dd>
-    
+
         </dl>
-    
-        @using (Html.BeginForm()) {
+
+        @using (Html.BeginForm())
+        {
             @Html.AntiForgeryToken()
-            @Html.HiddenFor(model=> model.CategoriaId)
-            <div class="form-actions">
-                <input class="bota1"type="submit" value="Apagar" class="btn btn-default" /> |
-                <button class="botao" type="button"> @Html.ActionLink("Back to List", "Index")@Html.ActionLink("Voltar", "Index")</button>         
+            @Html.HiddenFor(model => model.CategoriaId)
+            <div class="form-actions no-color">
+                <input type="submit" value="Delete" class="btn btn-default" /> |
+                @Html.ActionLink("Retornar para Lista", "Index")
             </div>
         }
     </div>

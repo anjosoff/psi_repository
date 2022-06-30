@@ -143,7 +143,6 @@ C:\Users\20201011110042\Source\Repos\anjosoff\psi_repository\psi_project\bin\pt-
 C:\Users\20201011110042\Source\Repos\anjosoff\psi_repository\psi_project\bin\pt-br\System.Web.Webpages.Razor.resources.dll
 C:\Users\20201011110042\Source\Repos\anjosoff\psi_repository\psi_project\bin\pt-br\System.Web.Helpers.resources.dll
 C:\Users\20201011110042\Source\Repos\anjosoff\psi_repository\psi_project\bin\pt-br\System.Web.Mvc.resources.dll
-C:\Users\20201011110042\Source\Repos\anjosoff\psi_repository\psi_project\obj\Debug\psi_project.csprojAssemblyReference.cache
 C:\Users\20201011110042\Source\Repos\anjosoff\psi_repository\psi_project\obj\Debug\psi_project.csproj.CoreCompileInputs.cache
 C:\Users\20201011110042\Source\Repos\anjosoff\psi_repository\psi_project\obj\Debug\psi_project.csproj.CopyComplete
 C:\Users\20201011110042\Source\Repos\anjosoff\psi_repository\psi_project\obj\Debug\psi_project.dll
@@ -227,3 +226,8 @@ C:\Users\20201011110042\Source\Repos\psi_repository\psi_project\obj\Debug\psi_pr
 C:\Users\20201011110042\Source\Repos\psi_repository\psi_project\obj\Debug\psi_project.csproj.CopyComplete
 C:\Users\20201011110042\Source\Repos\psi_repository\psi_project\obj\Debug\psi_project.dll
 C:\Users\20201011110042\Source\Repos\psi_repository\psi_project\obj\Debug\psi_project.pdb
+C:\Users\20201011110042\Source\Repos\anjosoff\psi_repository\psi_project\bin\EntityFramework.dll
+C:\Users\20201011110042\Source\Repos\anjosoff\psi_repository\psi_project\bin\EntityFramework.SqlServer.dll
+C:\Users\20201011110042\Source\Repos\anjosoff\psi_repository\psi_project\bin\EntityFramework.xml
+C:\Users\20201011110042\Source\Repos\anjosoff\psi_repository\psi_project\bin\EntityFramework.SqlServer.xml
+C:\Users\20201011110042\Source\Repos\anjosoff\psi_repository\psi_project\obj\Debug\psi_project.csproj.AssemblyReference.cache
